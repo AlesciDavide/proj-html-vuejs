@@ -54,7 +54,7 @@ created(){
     </div>
     <!-- lista card con l'api -->
     <section v-if="isActive">
-        <article :class="(isActive) ? 'myArticleGrid' : 'myArticleList'" v-for="card in store.thirdCardsApi" v-if="store.thirdCardsApi.length > 0">
+        <!-- <article :class="(isActive) ? 'myArticleGrid' : 'myArticleList'" v-for="(card, index) in store.thirdCardsApi" :key="index" v-if="store.thirdCardsApi.length > 0">
             <img :src="card.image" :alt="card.event_name">
             <h2>{{ card.event_name }}</h2>
             <p>
@@ -65,9 +65,9 @@ created(){
             </p>
             <p class="myBike">{{ card.type }}</p>
             <span class="dateClip">{{ card.start_date[8] + card.start_date[9] }} <br> {{ store.months[((card.start_date[5] + card.start_date[6]) - 1) + 1] }}</span>
-        </article>
+        </article> -->
         <!-- lista card senza api (nel caso l'api non fosse disponibile) -->
-        <article :class="(isActive) ? 'myArticleGrid' : 'myArticleList'" v-for="card in store.thirdCards" v-else>
+        <article :class="(isActive) ? 'myArticleGrid' : 'myArticleList'" v-for="(card, index) in store.thirdCards" :key="index" >
             <img :src="card.img" :alt="card.title">
             <h2>{{ card.title }}</h2>
             <p>
